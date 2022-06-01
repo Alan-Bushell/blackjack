@@ -39,19 +39,56 @@ Once I decided on this concept I started to work out my flow and used Lucid Char
 > Please see the below flow chart to better understand the initial design and concept
 ![Lucid Flow Chart](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/flowchart.png)
 
+### Pre-Planning Structure
+
+### Structure
+
+#### Deck structure
+> Suits
+
+> Card numbers
+
+> Face Cards
+
+> Values for cards
+
+For loop over suits and cards to generate deck of 52 cards.
+
+#### Player Structure
+> Name
+
+> Player Cards
+
+> Player Card Value
+
+> Player Score
+
+** If player hits and requests additional card then score, cards and value need to be updated**
+
+#### Dealer Structure
+> Dealer Cards
+
+> Dealer Hidden Card
+
+> Dealer Logic
+
+** If dealer has 16 on reveal of hidden card, dealer must hit until they exceed 16**
+
+#### Blackjack Function
+> Check if user has blackjack
+
+> Check if dealer has blackjack on reveal of hidden card
+
+#### Compartitive structure
+> If either player or dealer exceeds 21 then they bust and the other wins
+
+> Who ever has a higher score while remaining at 21 or lower wins
 
 
 <a name="left"></a>
-# Features Left to implement
-> Add a high score tracker for the user
-> Add a highscores modal for each seperate game
-> Be able to input username to push to a leaderboard
 
 ### Additional ideas
 
-> Ideally I would like to add more complex quizzes and offer a range of topics related to the overarching theme.
-> One prospective idea was to find popular tourist locations on googlestreet view and allow the user brief moments to slightly pan and decide where they are.
-> Ability to allow a user to complete a specific quiz and share the same version of the quiz with a friend as a form of head 2 head competition.
 
 <a name="tech"></a>
 # Technology Used
