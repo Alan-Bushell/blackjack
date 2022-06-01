@@ -44,45 +44,49 @@ Once I decided on this concept I started to work out my flow and used Lucid Char
 ### Structure
 
 #### Deck structure
-> Suits
+- Suits
 
-> Card numbers
+- Card numbers
 
-> Face Cards
+- Face Cards
 
-> Values for cards
+- Values for cards
 
 For loop over suits and cards to generate deck of 52 cards.
 
 #### Player Structure
-> Name
 
-> Player Cards
+- Name
 
-> Player Card Value
+- Player Cards
 
-> Player Score
+- Player Card Value
+
+- Player Score
 
 ** If player hits and requests additional card then score, cards and value need to be updated**
 
 #### Dealer Structure
-> Dealer Cards
 
-> Dealer Hidden Card
+- Dealer Cards
 
-> Dealer Logic
+- Dealer Hidden Card
+
+- Dealer Logic
 
 ** If dealer has 16 on reveal of hidden card, dealer must hit until they exceed 16**
 
 #### Blackjack Function
-> Check if user has blackjack
 
-> Check if dealer has blackjack on reveal of hidden card
+- Check if user has blackjack
+
+- Check if dealer has blackjack on reveal of hidden card
 
 #### Compartitive structure
-> If either player or dealer exceeds 21 then they bust and the other wins
 
-> Who ever has a higher score while remaining at 21 or lower wins
+- If either player or dealer exceeds 21 then they bust and the other wins
+
+- Who ever has a higher score while remaining at 21 or lower wins
 
 
 <a name="left"></a>
