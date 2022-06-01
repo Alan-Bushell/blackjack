@@ -1,31 +1,105 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Blackjack
 
-Welcome Alan-Bushell,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## A Python command line game
+> This application is a Python based blackjack style card game. The game takes the user's name to begin with and then proceeds into the game.
 
-## Reminders
+### - By Alan Bushell
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+### **[Live site](https://blackjack-abushell.herokuapp.com/)**
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### **[Repository](https://github.com/Alan-Bushell/blackjack)**
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+  
+## Table of contents
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+ 1. [ Pre-Project Planning ](#plan)  
+ 2. [ Features Left to Implement ](#left)  
+ 3. [ Technology used ](#tech) 
+ 4. [ Testing ](#testing)  
+ 5. [ Bugs ](#bugs)  
+ 6. [ Deployment](#deployment)
+ 7. [ Credits](#credits)
+ 8. [ Content](#content)  
+ 9. [ Acknowledgements](#acknowledgements)  
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Flow
 
------
-Happy coding!
+<a name="plan"></a>
+### Pre-project Planning
+
+> For project 3 I decided I wanted to make a blackjack style python game in the command line. 
+
+Once I decided on this concept I started to work out my flow and used Lucid Chart to create an easy to follow process. I wanted to create this early on so I can understand the logic needed to complete the project and in what order I should approach it from. 
+
+> Please see the below flow chart to better understand the initial design and concept
+![Lucid Flow Chart](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/flowchart.png)
+
+
+
+<a name="left"></a>
+# Features Left to implement
+> Add a high score tracker for the user
+> Add a highscores modal for each seperate game
+> Be able to input username to push to a leaderboard
+
+### Additional ideas
+
+> Ideally I would like to add more complex quizzes and offer a range of topics related to the overarching theme.
+> One prospective idea was to find popular tourist locations on googlestreet view and allow the user brief moments to slightly pan and decide where they are.
+> Ability to allow a user to complete a specific quiz and share the same version of the quiz with a friend as a form of head 2 head competition.
+
+<a name="tech"></a>
+# Technology Used
+### Python
+
+<a name="testing"></a>
+# Testing
+
+
+### Testing Phase
+
+#### Manual Testing
+
+| Test | Result |
+|--|--|
+|||
+
+
+#### User tests
+
+ 
+|Test|Result  |
+|--|--|
+|||
+
+
+<a name="bugs"></a>
+## **Bugs**
+
+
+<a name="deployment"></a>
+## Deployment
+
+
+<a name="credits"></a>
+## Credits
+
+
+<a name="content"></a>
+## Content & Resources
+
+### w3 schools
+> Used to reference Python Structure
+
+### Code Institute
+> Project created in line with course content and within project 3 scope.
+
+<a name="acknowlegements"></a>
+## Acknowledgements
+
+
