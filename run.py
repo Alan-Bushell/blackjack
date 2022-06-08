@@ -24,3 +24,18 @@ def start():
 
 
 start()
+
+
+class Deck():
+    """
+    A class for deck to create the cards, values, suits and to assign them
+    """
+
+    def __init__(self, suit, value, card_value):
+        self.suit = suit
+        self.value = value
+        self.card_value = card_value
+
+    deck = []
+    suit = ["Clubs", "Spades", "Diamonds", "Hearts"]
+    value = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
