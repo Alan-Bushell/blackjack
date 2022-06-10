@@ -1,31 +1,6 @@
 import random
 
 
-def start():
-    """
-    Initial function to test connection to heroku
-    """
-    print("\n                              Welcome to:")
-    banner = """
-    .------..------..------..------..------..------..------..------..------.
-    |B.--. ||L.--. ||A.--. ||C.--. ||K.--. ||J.--. ||A.--. ||C.--. ||K.--. |
-    | :(): || :/\: || (\/) || :/\: || :/\: || :(): || (\/) || :/\: || :/\: |
-    | ()() || (__) || :\/: || :\/: || :\/: || ()() || :\/: || :\/: || :\/: |
-    | '--'B|| '--'L|| '--'A|| '--'C|| '--'K|| '--'J|| '--'A|| '--'C|| '--'K|
-    `------'`------'`------'`------'`------'`------'`------'`------'`------'
-"""
-    print(banner)
-    print("By Alan Bushell - Portfolio 3\n")
-    print("Good luck and try not to lose to much!\n")
-    name = input("To start, please enter your name:\n")
-    age = input("Please provide your age:\n")
-    print(f"Welcome to Blackjack {name}.")
-    print(f"As you are {age} years old you are old enough to play!")
-
-
-start()
-
-
 class Card:
     """
     Class for the card instances and their values
@@ -97,3 +72,57 @@ class Deck:
         a the next card in the game
         """
         return self.cards.pop()
+
+
+class Player:
+    """
+    Creating the player class to be able to assign cards, score and name
+    """
+
+    def __init__(self, name):
+        self.name = name
+        self.hand = []
+
+    def draw(self, deck):
+        """
+        Draw a card from the deck and add it to the players hand
+        """
+
+        self.hand.append(deck.draw_card())
+        return self
+
+    def show_hand(self):
+        """
+        Method to show the players hand
+        """
+        for card in self.hand:
+            card.show()
+
+
+deck = Deck()
+deck.shuffle()
+
+
+def start():
+    """
+    Initial function to test connection to heroku
+    """
+    print("\n                              Welcome to:")
+    banner = """
+    .------..------..------..------..------..------..------..------..------.
+    |B.--. ||L.--. ||A.--. ||C.--. ||K.--. ||J.--. ||A.--. ||C.--. ||K.--. |
+    | :(): || :/\: || (\/) || :/\: || :/\: || :(): || (\/) || :/\: || :/\: |
+    | ()() || (__) || :\/: || :\/: || :\/: || ()() || :\/: || :\/: || :\/: |
+    | '--'B|| '--'L|| '--'A|| '--'C|| '--'K|| '--'J|| '--'A|| '--'C|| '--'K|
+    `------'`------'`------'`------'`------'`------'`------'`------'`------'
+"""
+    print(banner)
+    print("By Alan Bushell - Portfolio 3\n")
+    print("Good luck and try not to lose to much!\n")
+    name = input("To start, please enter your name:\n")
+    print(f"Welcome to Blackjack {name}.")
+    card = deck.draw_card()
+    card.show()
+
+
+start()
