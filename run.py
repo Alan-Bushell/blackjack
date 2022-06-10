@@ -14,7 +14,7 @@ class Card:
         A way to format and display the card while formatting the deck
         """
     def __str__(self):
-        if self.value == 10:
+        if self.value == 10:  # Using ascii to add card shape to terminal
             return f"""
 .-------.
 |{self.value}.---. |
@@ -39,8 +39,8 @@ class Deck:
         suits = ["♠", "♥", "♣", "♦"]
         values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
                   "K"]
-        card_value = {"A": 11, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
-                  "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10}
+        value = {"A": 11, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
+                      "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10}
         for s in suits:
             for v in values:
                 self.cards.append(Card(s, v))
@@ -58,7 +58,7 @@ class Deck:
         """
         random.shuffle(self.cards)
 
-    def draw_card(self):
+    def deal(self):
         """
         Takes the first card from the deck and removes it to be used
         a the next card in the game
@@ -67,21 +67,23 @@ class Deck:
         return single_card
 
 
-class Player:
+class Hand:
     """
-    Creating the player class to be able to assign cards, score and name
+    Creating the hand class to be able to assign cards, check score and hold 
+    information
     """
 
-    def __init__(self, name):
-        self.name = name
-        self.hand = []
+    def __init__(self):
+        self.cards = []
+        self.value = 0
+        self.aces = 0  # Tracking aces as they can be 11 or 1
 
-    def draw(self, deck):
+    def add_card(self, card):
         """
         Draw a card from the deck and add it to the players hand
         """
-
-        self.hand.append(deck.draw_card())
+        self.cards.append(card)
+        self.value += values[card.value]
         return self
 
     def show_hand(self):
