@@ -1,4 +1,4 @@
-import random
+import random  # import random to shuffle deck of cards
 
 
 class Card:
@@ -13,22 +13,15 @@ class Card:
         """
         A way to format and display the card while formatting the deck
         """
+    def __str__(self):
         if self.value == 10:
-            print(f"""
-.-------.
-|{self.value}.--. |
-| : {self.suit} : |
-| '--'{self.value}|
-`-------'
-""")
-        else:
-            print(f"""
+            return f"""
 .-------.
 |{self.value}.---. |
 | : {self.suit} : |
 | '---'{self.value}|
 `-------'
-""")
+"""
 
 
 class Deck:
@@ -46,6 +39,8 @@ class Deck:
         suits = ["♠", "♥", "♣", "♦"]
         values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
                   "K"]
+        card_value = {"A": 11, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
+                  "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10}
         for s in suits:
             for v in values:
                 self.cards.append(Card(s, v))
@@ -59,19 +54,17 @@ class Deck:
 
     def shuffle(self):
         """
-        Method to loop through the cards bearing in mind it is a 0 index,
-        and swapping the order of the cards
+        Method to loop through the cards
         """
-        for i in range(len(self.cards) - 1, 0, -1):
-            r = random.randint(0, i)
-            self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
+        random.shuffle(self.cards)
 
     def draw_card(self):
         """
         Takes the first card from the deck and removes it to be used
         a the next card in the game
         """
-        return self.cards.pop()
+        single_card = self.cards.pop()
+        return single_card
 
 
 class Player:
