@@ -40,23 +40,52 @@ class Card:
         """
         A way to format and display the card while formatting the deck
         """
-        print(f"{self.value} of {self.suit}")
+        if self.value == 10:
+            print(f"""
+.-------.
+|{self.value}.--. |
+| : {self.suit} : |
+| '--'{self.value}|
+`-------'
+""")
+        else:
+            print(f"""
+.-------.
+|{self.value}.---. |
+| : {self.suit} : |
+| '---'{self.value}|
+`-------'
+""")
 
+
+class Deck:
+    """
+    Class to create and hold the deck
+    """
+    def __init__(self):
+        self.cards = []
+        self.build()
+
+    def build(self):
+        """
+        A loop to build and populate each card
+        """
+        suits = ["♠", "♥", "♣", "♦"]
+        values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
+                  "K"]
+        for s in suits:
+            for v in values:
+                self.cards.append(Card(s, v))
+
+    def show(self):
+        """
+        A way to display the cards
+        """
+        for c in self.cards:
+            c.show()
+
+
+deck = Deck()
+deck.show()
 
 deck = []
-suits = ["♠", "♥", "♣", "♦"]
-cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-
-for c in cards:
-    for s in suits:
-        deck.append()
-
-print(deck)
-
-card_template = f"""
-.-------.
-|{c}.---. |
-| : {s} : |
-| '---'{c}|
-`-------'
-"""
