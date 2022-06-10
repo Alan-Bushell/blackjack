@@ -28,6 +28,21 @@ def start():
 start()
 
 
+class Card:
+    """
+    Class for the card instances and their values
+    """
+    def __init__(self, suit, val):
+        self.suit = suit
+        self.value = val
+
+    def show(self):
+        """
+        A way to format and display the card while formatting the deck
+        """
+        print(f"{self.value} of {self.suit}")
+
+
 deck = []
 suits = ["♠", "♥", "♣", "♦"]
 cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
