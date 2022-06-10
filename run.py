@@ -40,7 +40,7 @@ class Deck:
         values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
                   "K"]
         value = {"A": 11, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
-                      "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10}
+                 "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10}
         for s in suits:
             for v in values:
                 self.cards.append(Card(s, v))
@@ -130,6 +130,29 @@ def hit_or_stand(deck, hand):
             print("Invalid entry. Please try again")
             continue
         break
+
+
+def first_round(player, dealer):
+    """
+    First round displays both user cards and only one of the
+    dealers card
+    """
+    print("Dealers Hand:")
+    print("Insert blank card ascii here")
+    print('', dealer.cards[1])
+    print("\nPlayers Hand = ", player.values)
+
+
+def display_all_cards(player, dealer):
+    """
+    Final round once playerhas decided to stand or hit then
+    the remaining dealer card is shown and scores can then
+    be calculated
+    """
+    print("Dealers Hand:", *dealer.cards, sep="\n")
+    print("Dealer's Hand =", dealer.value)
+    print("Player's Hand:", *player.cards, sep="\n")
+    print("\nPlayers Hand = ", player.values)
 
 
 deck = Deck()

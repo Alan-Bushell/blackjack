@@ -130,6 +130,15 @@ For loop over suits and cards to generate deck of 52 cards.
 <a name="credits"></a>
 ## Credits
 
+Multiple resources used to better understand the logic and flow of a gaming programme in Python.
+
+https://codereview.stackexchange.com/questions/177523/simple-oop-blackjack-game-in-python
+
+https://www.youtube.com/watch?v=8QTsK1aVMI0
+
+https://medium.com/@anthonytapias/build-a-deck-of-cards-with-oo-python-c41913a744d3
+
+https://www.askpython.com/python/examples/blackjack-game-using-python
 
 <a name="content"></a>
 ## Content & Resources
