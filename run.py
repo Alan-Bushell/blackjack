@@ -83,8 +83,9 @@ class Hand:
         Draw a card from the deck and add it to the players hand
         """
         self.cards.append(card)
-        self.value += values[card.value]
-        return self
+        self.value += value[card.values]
+        if card.values == "A":
+            self.aces += 1
 
     def show_hand(self):
         """
@@ -92,6 +93,43 @@ class Hand:
         """
         for card in self.hand:
             card.show()
+
+    def adjust_for_ace(self):
+        """
+        Update value based on number of aces as 2 aces would mean 22 and bust
+        """
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1
+
+
+def hit(deck, hand):
+    """
+    Function to add a single card to the users hand, call the check_for_aces
+    function and adjust score accordingly
+    """
+    hand.add_card(deck.deak())
+    hand.adjust_for_ace()
+
+
+def hit_or_stand(deck, hand):
+    """
+    Function to start the loop of asking the payer to hit or stand
+    """
+
+    while True:
+        game_loop = input("Press H for hit or S for stand: 'H'/ 'S'")
+
+        if game_loop.lower() == "h":
+            hit(deck, hand)
+
+        elif game_loop.lower() == "s":
+            print("You have chosen Stand. Now its the dealers turn:")
+
+        else:
+            print("Invalid entry. Please try again")
+            continue
+        break
 
 
 deck = Deck()
