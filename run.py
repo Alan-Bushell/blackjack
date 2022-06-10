@@ -20,22 +20,28 @@ def start():
     print("By Alan Bushell - Portfolio 3\n")
     print("Good luck and try not to lose to much!\n")
     name = input("To start, please enter your name:\n")
-    print(f"Welcome {name}. Get ready to be dealt your cards!")
+    age = input("Please provide your age:\n")
+    print(f"Welcome to Blackjack {name}.")
+    print(f"As you are {age} years old you are old enough to play!")
 
 
 start()
 
 
-class Deck():
-    """
-    A class for deck to create the cards, values, suits and to assign them
-    """
+deck = []
+suits = ["♠", "♥", "♣", "♦"]
+cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
-    def __init__(self, suit, value, card_value):
-        self.suit = suit
-        self.value = value
-        self.card_value = card_value
+for c in cards:
+    for s in suits:
+        deck.append()
 
-    deck = []
-    suit = ["Clubs", "Spades", "Diamonds", "Hearts"]
-    value = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+print(deck)
+
+card_template = f"""
+.-------.
+|{c}.---. |
+| : {s} : |
+| '---'{c}|
+`-------'
+"""
