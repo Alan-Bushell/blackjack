@@ -1,6 +1,4 @@
-"""
-Python Blackjack command line game for porfolio 3 project
-"""
+import random
 
 
 def start():
@@ -84,8 +82,18 @@ class Deck:
         for c in self.cards:
             c.show()
 
+    def shuffle(self):
+        """
+        Method to loop through the cards bearing in mind it is a 0 index,
+        and swapping the order of the cards
+        """
+        for i in range(len(self.cards) - 1, 0, -1):
+            r = random.randint(0, i)
+            self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
 
-deck = Deck()
-deck.show()
-
-deck = []
+    def draw_card(self):
+        """
+        Takes the first card from the deck and removes it to be used
+        a the next card in the game
+        """
+        return self.cards.pop()
