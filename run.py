@@ -1,7 +1,4 @@
 import random  # import random to shuffle deck of cards
-import os
-
-clear = lambda: os.system("cls") # Used to clear the terminal
 
 # Move card values into global scope
 
@@ -123,6 +120,7 @@ def hit_or_stand(deck, hand):
 
         elif game_loop.lower() == "s":
             print("You have chosen Stand. Now its the dealers turn:")
+            PLAYING = False
 
         else:
             print("Invalid entry. Please try again")
@@ -136,7 +134,7 @@ def first_round(player, dealer):
     dealers card
     """
     print("Dealers Hand:")
-    print("Hidden card")
+    print(hidden_card)
     print('', dealer.cards[1])
     print("\nPlayers Hand:", *player.cards, sep="\n")
     print("\nPlayers Total = ", player.value)
@@ -144,14 +142,14 @@ def first_round(player, dealer):
 
 def display_all_cards(player, dealer):
     """
-    Final round once playerhas decided to stand or hit then
+    Final round once player has decided to stand or hit then
     the remaining dealer card is shown and scores can then
     be calculated
     """
     print("Dealers Hand:", *dealer.cards, sep="\n")
     print("Dealer's Hand =", dealer.value)
     print("Player's Hand:", *player.cards, sep="\n")
-    print("\nPlayers Hand = ", player.value)
+    print("\nPlayers Total = ", player.value)
 
 
 def player_wins(player, dealer):
@@ -238,7 +236,7 @@ while True:
         if dealer_hand.value > 21:
             dealer_busts(player_hand, dealer_hand)
 
-        elif player_hand > dealer_hand:
+        elif player_hand < 21 and player_hand > dealer_hand:
             player_wins(player_hand, dealer_hand)
 
         elif player_hand < dealer_hand:
@@ -254,7 +252,6 @@ while True:
 
         continue
     else:
-        clear()
         print("""
     .------..------..------..------..------.     .------..------..------.
     |T.--. ||H.--. ||A.--. ||N.--. ||K.--. |     |Y.--. ||O.--. ||U.--. |
