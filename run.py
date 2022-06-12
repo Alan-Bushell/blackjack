@@ -16,7 +16,7 @@ class Card:
     """
     def __init__(self, suit, rank):
         self.suit = suit
-        self.value = rank
+        self.rank = rank
 
         """
         A way to format and display the card while formatting the deck
@@ -24,9 +24,9 @@ class Card:
     def __str__(self):  # Using ascii to add card shape to terminal
         return f"""
 .-------.
-|{self.value}.---. |
+|{self.rank}.---. |
 | : {self.suit} : |
-| '---'{self.value}|
+| '---'{self.rank}|
 `-------'
 """
 
@@ -36,37 +36,24 @@ class Deck:
     Class to create and hold the deck
     """
     def __init__(self):
-        self.cards = []
-        self.build()
-
-    def build(self):
-        """
-        A loop to build and populate each card
-        """
-
-        for s in suits:
-            for v in values:
-                self.cards.append(Card(s, v))
-
-    def show(self):
-        """
-        A way to display the cards
-        """
-        for c in self.cards:
-            c.show()
+        self.deck = []
+        # Build the cards using a for loop and push to deck
+        for suit in suits:
+            for rank in ranks:
+                self.deck.append(Card(suit, rank))
 
     def shuffle(self):
         """
-        Method to loop through the cards
+        Method to shuffle cards in deck
         """
-        random.shuffle(self.cards)
+        random.shuffle(self.deck)
 
     def draw_card(self):
         """
         Takes the first card from the deck and removes it to be used
-        a the next card in the game
+        as the next card in the game
         """
-        single_card = self.cards.pop()
+        single_card = self.deck.pop()
         return single_card
         print(single_card)
 
