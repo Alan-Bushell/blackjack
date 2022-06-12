@@ -9,6 +9,7 @@ ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
 values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
           "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
 
+name = input("To start, please enter your name:\n")
 
 playing = True
 
@@ -141,6 +142,25 @@ def display_all_cards(player, dealer):
     print("\nPlayers Hand = ", player.values)
 
 
+def player_wins(player, dealer):
+    """
+    If the player wins then notify player and insert name into message
+    """
+    print(f"{name} wins!!")
+
+
+def dealer_wins(player, dealer):
+    """
+    If the dealer wins then notify player and insert name into message
+    """
+    print(f"{name} loses!! The dealer has won this one")
+
+
+def player_bust(player, dealer):
+    """
+    If the player busts then notify player and insert name into message
+    """
+    print(f"{name} has busted.")
 
 
 
@@ -160,10 +180,8 @@ def start():
     print(banner)
     print("By Alan Bushell - Portfolio 3\n")
     print("Good luck and try not to lose to much!\n")
-    name = input("To start, please enter your name:\n")
+    
     print(f"Welcome to Blackjack {name}.")
-    card = deck.draw_card()
-    card.show()
 
 
 start()
