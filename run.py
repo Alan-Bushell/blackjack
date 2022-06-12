@@ -10,6 +10,9 @@ values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
           "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
 
 
+playing = True
+
+
 class Card:
     """
     Class for the card instances and their values
@@ -48,22 +51,20 @@ class Deck:
         """
         random.shuffle(self.deck)
 
-    def draw_card(self):
+    def deal(self):
         """
         Takes the first card from the deck and removes it to be used
         as the next card in the game
         """
         single_card = self.deck.pop()
         return single_card
-        print(single_card)
 
 
 class Hand:
     """
-    Creating the hand class to be able to assign cards, check score and hold 
-    information
+    Creating the hand class to be able to assign cards, check score and 
+    hold information
     """
-
     def __init__(self):
         self.cards = []
         self.value = 0
@@ -74,16 +75,9 @@ class Hand:
         Draw a card from the deck and add it to the players hand
         """
         self.cards.append(card)
-        self.value += value[card.values]
+        self.value += values[card.rank]
         if card.values == "A":
             self.aces += 1
-
-    def show_hand(self):
-        """
-        Method to show the players hand
-        """
-        for card in self.hand:
-            card.show()
 
     def adjust_for_ace(self):
         """
@@ -107,6 +101,7 @@ def hit_or_stand(deck, hand):
     """
     Function to start the loop of asking the payer to hit or stand
     """
+    global playing  # Access global scope
 
     while True:
         game_loop = input("Press H for hit or S for stand: 'H'/ 'S'")
@@ -146,8 +141,7 @@ def display_all_cards(player, dealer):
     print("\nPlayers Hand = ", player.values)
 
 
-deck = Deck()
-deck.shuffle()
+
 
 
 def start():
