@@ -1,4 +1,7 @@
 import random  # import random to shuffle deck of cards
+import os
+
+clear = lambda: os.system("cls") # Used to clear the terminal
 
 # Move card values into global scope
 
@@ -19,7 +22,7 @@ hidden_card = """
 `-------'
         """
 
-playing = True
+PLAYING = True
 
 
 class Card:
@@ -110,7 +113,7 @@ def hit_or_stand(deck, hand):
     """
     Function to start the loop of asking the payer to hit or stand
     """
-    global playing  # Access global scope
+    global PLAYING  # Access global scope
 
     while True:
         game_loop = input("Press H for hit or S for stand: 'H'/ 'S'")
@@ -133,7 +136,7 @@ def first_round(player, dealer):
     dealers card
     """
     print("Dealers Hand:")
-    print(hidden_card)
+    print("Hidden card")
     print('', dealer.cards[1])
     print("\nPlayers Hand:", *player.cards, sep="\n")
     print("\nPlayers Total = ", player.value)
@@ -146,9 +149,9 @@ def display_all_cards(player, dealer):
     be calculated
     """
     print("Dealers Hand:", *dealer.cards, sep="\n")
-    print("Dealer's Hand =", dealer.values)
+    print("Dealer's Hand =", dealer.value)
     print("Player's Hand:", *player.cards, sep="\n")
-    print("\nPlayers Hand = ", player.values)
+    print("\nPlayers Hand = ", player.value)
 
 
 def player_wins(player, dealer):
@@ -214,7 +217,7 @@ while True:
     first_round(player_hand, dealer_hand)  # only show 1 dealer card
 
     # First round of player interaction
-    while playing:
+    while PLAYING:
         hit_or_stand(deck, player_hand)
 
         first_round(player_hand, dealer_hand)
@@ -243,3 +246,19 @@ while True:
 
         else:
             push(player_hand, dealer_hand)
+
+    new_game = input("Would you like to play again? Y(es) or N(o)")
+
+    if new_game.lower() == 'y':
+        PLAYING = True
+
+        continue
+    else:
+        clear()
+        print("""
+    .------..------..------..------..------.     .------..------..------.
+    |T.--. ||H.--. ||A.--. ||N.--. ||K.--. |     |Y.--. ||O.--. ||U.--. |
+    | :/\: || :/\: || (\/) || :(): || :/\: |     | (\/) || :/\: || (\/) |
+    | (__) || (__) || :\/: || ()() || :\/: |     | :\/: || :\/: || :\/: |
+    | '--'T|| '--'H|| '--'A|| '--'N|| '--'K|     | '--'Y|| '--'O|| '--'U|
+    `------'`------'`------'`------'`------'     `------'`------'`------'""")
