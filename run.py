@@ -200,8 +200,8 @@ while True:
 """
     print(BANNER)
 
-    deck = Deck()
-    deck.shuffle()
+    deck = Deck()  # Initialise deck
+    deck.shuffle()  # Shuffle decl
 
     player_hand = Hand()
     player_hand.add_card(deck.deal())  # Assign the player the first card
@@ -213,7 +213,33 @@ while True:
 
     first_round(player_hand, dealer_hand)  # only show 1 dealer card
 
+    # First round of player interaction
     while playing:
         hit_or_stand(deck, player_hand)
 
         first_round(player_hand, dealer_hand)
+
+        if player_hand.value > 21:
+            player_bust(player_hand, dealer_hand)
+            break
+
+    if player_hand.value <= 21:
+
+        while dealer_hand.value < 17:
+            hit(deck, dealer_hand)
+
+        # Show hidden dealer card
+        display_all_cards(player_hand, dealer_hand)
+
+        # Check winner
+        if dealer_hand.value > 21:
+            dealer_busts(player_hand, dealer_hand)
+
+        elif player_hand > dealer_hand:
+            player_wins(player_hand, dealer_hand)
+
+        elif player_hand < dealer_hand:
+            dealer_wins(player_hand, dealer_hand)
+
+        else:
+            push(player_hand, dealer_hand)
