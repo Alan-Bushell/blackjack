@@ -193,4 +193,12 @@ while True:
     deck = Deck()
     deck.shuffle()
 
-    
+    player_hand = Hand()
+    player_hand.add_card(deck.deal())  # Assign the player the first card
+    player_hand.add_card(deck.deal())  # Assign the player the second card
+
+    dealer_hand = Hand()
+    dealer_hand.add_card(deck.deal())  # Assign the dealer the first card
+    dealer_hand.add_card(deck.deal())  # Assign the dealer the second card
+
+    first_round(player, dealer)  # first call of cards hiding 1 dealer card
