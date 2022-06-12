@@ -1,6 +1,5 @@
 import random  # import random to shuffle deck of cards
 
-
 # Move card values into global scope
 
 suits = ["♠", "♥", "♣", "♦"]
@@ -63,7 +62,7 @@ class Deck:
 
 class Hand:
     """
-    Creating the hand class to be able to assign cards, check score and 
+    Creating the hand class to be able to assign cards, check score and
     hold information
     """
     def __init__(self):
@@ -94,7 +93,7 @@ def hit(deck, hand):
     Function to add a single card to the users hand, call the check_for_aces
     function and adjust score accordingly
     """
-    hand.add_card(deck.deak())
+    hand.add_card(deck.deal())
     hand.adjust_for_ace()
 
 
@@ -163,13 +162,25 @@ def player_bust(player, dealer):
     print(f"{name} has busted.")
 
 
+def dealer_busts(player, dealer):
+    """
+    If the dealer busts then notify player and insert name into message
+    """
+    print(f"{name} wins!! The dealer has won this one")
 
-def start():
+
+def push(player, dealer):
     """
-    Initial function to test connection to heroku
+    If after the game has reached its conclusion and scores are tied.
     """
+    print(f"A tie! {name} & the dealer have the same score.")
+
+
+# Starting the game
+
+while True:
     print("\n                              Welcome to:")
-    banner = """
+    BANNER = """
     .------..------..------..------..------..------..------..------..------.
     |B.--. ||L.--. ||A.--. ||C.--. ||K.--. ||J.--. ||A.--. ||C.--. ||K.--. |
     | :(): || :/\: || (\/) || :/\: || :/\: || :(): || (\/) || :/\: || :/\: |
@@ -177,11 +188,9 @@ def start():
     | '--'B|| '--'L|| '--'A|| '--'C|| '--'K|| '--'J|| '--'A|| '--'C|| '--'K|
     `------'`------'`------'`------'`------'`------'`------'`------'`------'
 """
-    print(banner)
-    print("By Alan Bushell - Portfolio 3\n")
-    print("Good luck and try not to lose to much!\n")
+    print(BANNER)
+
+    deck = Deck()
+    deck.shuffle()
+
     
-    print(f"Welcome to Blackjack {name}.")
-
-
-start()
