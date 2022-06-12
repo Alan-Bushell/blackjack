@@ -10,6 +10,15 @@ values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
 
 name = input("To start, please enter your name:\n")
 
+
+hidden_card = """
+.-------.
+|?.---. |
+| : ? : |
+| '---'?|
+`-------'
+        """
+
 playing = True
 
 
@@ -76,7 +85,7 @@ class Hand:
         """
         self.cards.append(card)
         self.value += values[card.rank]
-        if card.values == "A":
+        if card.rank == "A":
             self.aces += 1
 
     def adjust_for_ace(self):
@@ -124,9 +133,10 @@ def first_round(player, dealer):
     dealers card
     """
     print("Dealers Hand:")
-    print("Insert blank card ascii here")
+    print(hidden_card)
     print('', dealer.cards[1])
-    print("\nPlayers Hand = ", player.values)
+    print("\nPlayers Hand:", *player.cards, sep="\n")
+    print("\nPlayers Total = ", player.value)
 
 
 def display_all_cards(player, dealer):
@@ -136,7 +146,7 @@ def display_all_cards(player, dealer):
     be calculated
     """
     print("Dealers Hand:", *dealer.cards, sep="\n")
-    print("Dealer's Hand =", dealer.value)
+    print("Dealer's Hand =", dealer.values)
     print("Player's Hand:", *player.cards, sep="\n")
     print("\nPlayers Hand = ", player.values)
 
@@ -201,4 +211,9 @@ while True:
     dealer_hand.add_card(deck.deal())  # Assign the dealer the first card
     dealer_hand.add_card(deck.deal())  # Assign the dealer the second card
 
-    first_round(player, dealer)  # first call of cards hiding 1 dealer card
+    first_round(player_hand, dealer_hand)  # only show 1 dealer card
+
+    while playing:
+        hit_or_stand(deck, player_hand)
+
+        first_round(player_hand, dealer_hand)
