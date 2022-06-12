@@ -1,21 +1,28 @@
 import random  # import random to shuffle deck of cards
 
 
+# Move card values into global scope
+
+suits = ["♠", "♥", "♣", "♦"]
+ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
+         "K", "A"]
+values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
+          "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
+
+
 class Card:
     """
     Class for the card instances and their values
     """
-    def __init__(self, suit, val):
+    def __init__(self, suit, rank):
         self.suit = suit
-        self.value = val
+        self.value = rank
 
-    def show(self):
         """
         A way to format and display the card while formatting the deck
         """
-    def __str__(self):
-        if self.value == 10:  # Using ascii to add card shape to terminal
-            return f"""
+    def __str__(self):  # Using ascii to add card shape to terminal
+        return f"""
 .-------.
 |{self.value}.---. |
 | : {self.suit} : |
@@ -36,11 +43,7 @@ class Deck:
         """
         A loop to build and populate each card
         """
-        suits = ["♠", "♥", "♣", "♦"]
-        values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
-                  "K"]
-        value = {"A": 11, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
-                 "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10}
+
         for s in suits:
             for v in values:
                 self.cards.append(Card(s, v))
@@ -58,13 +61,14 @@ class Deck:
         """
         random.shuffle(self.cards)
 
-    def deal(self):
+    def draw_card(self):
         """
         Takes the first card from the deck and removes it to be used
         a the next card in the game
         """
         single_card = self.cards.pop()
         return single_card
+        print(single_card)
 
 
 class Hand:
