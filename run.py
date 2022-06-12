@@ -22,12 +22,12 @@ print("\n                              Welcome to:")
 print(BANNER)
 
 # Input for users name and to store it
-name = input("To start, please enter your name:\n")
+name = str(input("To start, please enter your name:\n"))
 print(f"Welcome to the game {name}.")
 
 # Input option for rules or to start game
 print("\nPlease select one of following options:")
-main_choice = input("\n1.Start Game\n2.Read Rules\nChoice:\n")
+main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
 
 # Test input to ensure it is valis
 
@@ -35,7 +35,7 @@ main_choice = input("\n1.Start Game\n2.Read Rules\nChoice:\n")
 if main_choice == 1:
     PLAYING = True
 
-else:
+elif main_choice == 2:
     PLAYING = False
     print("""
     Rules of BlackJack \n
@@ -53,12 +53,18 @@ else:
     9. Good luck
     """)
 
+else:
+    print("I am sorry that input is invalid. Please try again.")
+    main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
+
 rules_choice = input("When you are ready to play press: 'Y'\n")
 
-if rules_choice.lower == 'y':
+if rules_choice.lower == "y":
     PLAYING = True
 else:
     print("I am sorry but that option is not recognized. Try Again")
+
+PLAYING = True
 
 HIDDEN_CARD = """
 .-------.
@@ -224,7 +230,7 @@ def dealer_busts(player, dealer):
     """
     If the dealer busts then notify player and insert name into message
     """
-    print(f"{name} wins!! The dealer has won this one")
+    print(f"{name} wins!! The dealer has bust")
 
 
 def push(player, dealer):
