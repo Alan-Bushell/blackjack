@@ -31,7 +31,6 @@ main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
 
 # Test input to ensure it is valis
 
-
 if main_choice == 1:
     PLAYING = True
 
@@ -59,7 +58,7 @@ else:
 
 rules_choice = input("When you are ready to play press: 'Y'\n")
 
-if rules_choice.lower == "y":
+if rules_choice.lower() == "y":
     PLAYING = True
 else:
     print("I am sorry but that option is not recognized. Try Again")
