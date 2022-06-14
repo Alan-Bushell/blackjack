@@ -10,6 +10,9 @@ values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
           "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
 GAME_COUNT = 1  # Track how many games the user has played
 
+PLAYER_WINS = 0
+DEALER_WINS = 0
+
 BANNER = """
                                     Welcome to:
     .------..------..------..------..------..------..------..------..------.
@@ -64,12 +67,12 @@ def welcome():
     print(BANNER)
 
 
-def clear():
+def clear_terminal():
     """
     Create function to clear terminal at specific points to give the
     game a clean and clear view.
     """
-    os.system('clear||cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 welcome()
@@ -80,7 +83,7 @@ while True:
         name = str(input("To start, please enter your name:\n"))
         if len(name) < 3 or not name.isalpha():
             print(
-                "Name must only contain letters and be at least 3 letters"
+                "Name can only be letters and must be at least 3 letters long"
             )
             continue
     except ValueError as e:
@@ -100,7 +103,7 @@ while True:
             break
 
         elif main_choice == 2:
-            clear()
+            clear_terminal()
             print("""
             Rules of BlackJack \n
             1. The player and dealer are both dealt two cards \n
@@ -134,7 +137,7 @@ if rules_choice.lower() == "y":
 else:
     print("I am sorry but that option is not recognized. Try Again")
     PLAYING = True
-clear()
+clear_terminal()
 
 
 class Card:
@@ -280,6 +283,8 @@ def player_wins(player, dealer):
     If the player wins then notify player and insert name into message
     """
     print(f"{name} wins!! The dealer had: {dealer.value}")
+    print("\nThe total wins are as follows:\n")
+    print(f"Player's wins: {PLAYER_WINS} | Dealer's Wins: {DEALER_WINS}\n")
     print(WINBANNER)
 
 
@@ -288,6 +293,8 @@ def dealer_wins(player, dealer):
     If the dealer wins then notify player and insert name into message
     """
     print(f"{name} loses!! The dealer had {dealer.value}")
+    print("\nThe total wins are as follows:\n")
+    print(f"Player's wins: {PLAYER_WINS} | Dealer's Wins: {DEALER_WINS}\n")
 
 
 def player_bust(player, dealer):
@@ -295,6 +302,8 @@ def player_bust(player, dealer):
     If the player busts then notify player and insert name into message
     """
     print(f"{name} has busted with a score of {player.value}.")
+    print("\nThe total wins are as follows:\n")
+    print(f"Player's wins: {PLAYER_WINS} | Dealer's Wins: {DEALER_WINS}\n")
 
 
 def dealer_busts(player, dealer):
@@ -302,6 +311,8 @@ def dealer_busts(player, dealer):
     If the dealer busts then notify player and insert name into message
     """
     print(f"{name} wins! The dealer has busted with a score of {dealer.value}")
+    print("\nThe total wins are as follows:\n")
+    print(f"Player's wins: {PLAYER_WINS} | Dealer's Wins: {DEALER_WINS}\n")
     print(WINBANNER)
 
 
@@ -310,12 +321,14 @@ def push(player, dealer):
     If after the game has reached its conclusion and scores are tied.
     """
     print(f"A tie! {name} & the dealer have the same score of {player.value}")
+    print("\nThe total wins are as follows:\n")
+    print(f"Player's wins: {PLAYER_WINS} | Dealer's Wins: {DEALER_WINS}\n")
 
 
 # Starting the game
 
 while True:
-    clear()
+    clear_terminal()
     deck = Deck()  # set deck = to Deck() function
     deck.shuffle()  # Shuffle deck
 
@@ -336,6 +349,7 @@ while True:
         first_round(player_hand, dealer_hand)
 
         if player_hand.value > 21:
+            PLAYER_WINS += 1
             player_bust(player_hand, dealer_hand)
             break
 
@@ -345,31 +359,34 @@ while True:
             hit(deck, dealer_hand)
 
         # Show hidden dealer card
-        clear()
+        clear_terminal()
         display_all_cards(player_hand, dealer_hand)
 
         # Check winner
         if dealer_hand.value > 21:
+            PLAYER_WINS += 1
             dealer_busts(player_hand, dealer_hand)
 
         elif player_hand.value > dealer_hand.value:
+            PLAYER_WINS += 1
             player_wins(player_hand, dealer_hand)
 
         elif player_hand.value < dealer_hand.value:
+            DEALER_WINS += 1
             dealer_wins(player_hand, dealer_hand)
 
         else:
             push(player_hand, dealer_hand)
 
-    new_game = input("Would you like to play again? Y(es) or N(o)\n")
+    new_game = input("\nEnter 'Y' to play again or any other key to exit\n")
 
-    if new_game.lower() == 'y':
-        clear()
+    if new_game.lower() == "y":
+        clear_terminal()
         PLAYING = True
         GAME_COUNT += 1
         continue
     else:
-        clear()
+        clear_terminal()
         print(ENDBANNER)
-        print("\n                                 FOR PLAYING MY GAME.\n")
-    break
+        print("\n                             FOR PLAYING MY GAME.\n")
+        break
