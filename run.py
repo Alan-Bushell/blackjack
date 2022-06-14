@@ -76,6 +76,7 @@ main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
 
 if main_choice == 1:
     PLAYING = True
+    clear()
 
 elif main_choice == 2:
     PLAYING = False
@@ -228,7 +229,7 @@ def first_round(player, dealer):
     First round displays both user cards and only one of the
     dealers card
     """
-    print("Dealers Hand:")
+    print("\nDealers Hand:")
     print(HIDDEN_CARD, '', dealer.cards[1])
     print("\nPlayers Hand:", *player.cards, sep="\n")
     print("\nPlayers Score = ", player.value)
@@ -241,7 +242,7 @@ def display_all_cards(player, dealer):
     the remaining dealer card is shown and scores can then
     be calculated
     """
-    print("Dealers Hand:", *dealer.cards, sep="\n")
+    print("\nDealers Hand:", *dealer.cards, sep="\n")
     print("Dealer's Score =", dealer.value)
     print("\nPlayer's Hand:", *player.cards, sep="\n")
     print("\nPlayers Score = ", player.value)
@@ -274,6 +275,7 @@ def dealer_busts(player, dealer):
     If the dealer busts then notify player and insert name into message
     """
     print(f"{name} wins!! The dealer has bust")
+    print(WINBANNER)
 
 
 def push(player, dealer):
@@ -335,8 +337,8 @@ while True:
     new_game = input("Would you like to play again? Y(es) or N(o)")
 
     if new_game.lower() == 'y':
-        PLAYING = True
         clear()
+        PLAYING = True
         continue
     else:
         clear()
