@@ -74,7 +74,6 @@ if main_choice == 1:
     clear()
 
 elif main_choice == 2:
-    PLAYING = False
     print("""
     Rules of BlackJack \n
     1. The player and dealer are both dealt two cards \n
@@ -95,15 +94,14 @@ else:
     print("I am sorry that input is invalid. Please try again.")
     main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
 
-rules_choice = input("When you are ready to play press: 'Y'\n")
+rules_choice = input("When you are ready to play press any key to start!")
 
 if rules_choice.lower() == "y":
-    clear()
     PLAYING = True
 else:
     print("I am sorry but that option is not recognized. Try Again")
-    clear()
-
+    PLAYING = True
+clear()
 
 HIDDEN_CARD = """
     .-------.
@@ -285,8 +283,8 @@ def push(player, dealer):
 
 while True:
 
-    deck = Deck()  # Initialise deck
-    deck.shuffle()  # Shuffle decl
+    deck = Deck()  # set deck = to Deck() function
+    deck.shuffle()  # Shuffle deck
 
     player_hand = Hand()
     player_hand.add_card(deck.deal())  # Assign the player the first card
