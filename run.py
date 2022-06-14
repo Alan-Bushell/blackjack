@@ -10,8 +10,8 @@ values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
           "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
 GAME_COUNT = 1  # Track how many games the user has played
 
-PLAYER_WINS = 0
-DEALER_WINS = 0
+PLAYER_WINS = 0  # track players wins
+DEALER_WINS = 0  # track dealer wins
 
 BANNER = """
                                     Welcome to:
@@ -97,7 +97,7 @@ while True:
 while True:
     try:
         print("\nPlease select one of following options:")
-        main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
+        main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice: "))
         if main_choice == 1:
             PLAYING = True
             break
