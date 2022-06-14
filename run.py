@@ -222,7 +222,7 @@ def hit_or_stand(deck, hand):
     global PLAYING  # Access global scope
 
     while True:
-        game_loop = input("Press H for hit or S for stand: 'H'/ 'S'")
+        game_loop = input("Press H for hit or S for stand: 'H'/ 'S'\n")
 
         if game_loop.lower() == "h":
             hit(deck, hand)
@@ -244,8 +244,8 @@ def first_round(player, dealer):
     """
     print("\nDealers Hand:")
     print(HIDDEN_CARD, '', dealer.cards[1])
-    print("\nPlayers Hand:", *player.cards, sep="\n")
-    print("\nPlayers Score = ", player.value)
+    print(f"\n {name}'s Hand:", *player.cards, sep="\n")
+    print(f"\n {name}'s Score = ", player.value)
     print("\n")
 
 
@@ -255,10 +255,12 @@ def display_all_cards(player, dealer):
     the remaining dealer card is shown and scores can then
     be calculated
     """
+    print("\nDealer Shows Card")
+    print("\n-------------------")
     print("\nDealers Hand:", *dealer.cards, sep="\n")
     print("Dealer's Score =", dealer.value)
-    print("\nPlayer's Hand:", *player.cards, sep="\n")
-    print("\nPlayers Score = ", player.value)
+    print(f"\n{name}'s Hand:", *player.cards, sep="\n")
+    print(f"\n{name} Score = ", player.value)
 
 
 def player_wins(player, dealer):
