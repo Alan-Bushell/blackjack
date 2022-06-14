@@ -63,7 +63,6 @@ if rules_choice.lower() == "y":
 else:
     print("I am sorry but that option is not recognized. Try Again")
 
-PLAYING = True
 
 HIDDEN_CARD = """
 .-------.
@@ -294,7 +293,6 @@ while True:
 
         continue
     else:
-        PLAYING = False
         print("""
     .------..------..------..------..------.     .------..------..------.
     |T.--. ||H.--. ||A.--. ||N.--. ||K.--. |     |Y.--. ||O.--. ||U.--. |
@@ -302,3 +300,4 @@ while True:
     | (__) || (__) || :\/: || ()() || :\/: |     | :\/: || :\/: || :\/: |
     | '--'T|| '--'H|| '--'A|| '--'N|| '--'K|     | '--'Y|| '--'O|| '--'U|
     `------'`------'`------'`------'`------'     `------'`------'`------'""")
+    break
