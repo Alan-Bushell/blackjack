@@ -16,7 +16,7 @@ def clear():
     Create function to clear terminal at specific points to give the
     game a clean and clear view.
     """
-    os.system('clear||cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 BANNER = """
