@@ -15,7 +15,7 @@ def clear():
     Create function to clear terminal at specific points to give the
     game a clean and clear view.
     """
-    os.system('cls||clear')
+    os.system('clear||cls')
 
 
 BANNER = """
@@ -61,7 +61,7 @@ print(BANNER)
 
 # Input for users name and to store it
 name = str(input("To start, please enter your name:\n"))
-print(f"Welcome to the game {name}.")
+print(f"Welcome to the game {name} :).")
 
 # Input option for rules or to start game
 print("\nPlease select one of following options:")
@@ -282,7 +282,7 @@ def push(player, dealer):
 # Starting the game
 
 while True:
-
+    clear()
     deck = Deck()  # set deck = to Deck() function
     deck.shuffle()  # Shuffle deck
 
