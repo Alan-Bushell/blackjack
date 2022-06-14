@@ -250,6 +250,7 @@ def first_round(player, dealer):
     print(HIDDEN_CARD, '', dealer.cards[1])
     print(f"\n {name}'s Hand:", *player.cards, sep="\n")
     print(f"\n {name}'s Score = ", player.value)
+    print("\n-----------------------------------------------")
     print("\n")
 
 
@@ -266,6 +267,7 @@ def display_all_cards(player, dealer):
     print("Dealer's Score =", dealer.value)
     print(f"\n{name}'s Hand:", *player.cards, sep="\n")
     print(f"\n{name} Score = ", player.value)
+    print("\n-----------------------------------------------")
 
 
 def player_wins(player, dealer):
