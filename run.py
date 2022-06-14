@@ -15,12 +15,7 @@ def clear():
     Create function to clear terminal at specific points to give the
     game a clean and clear view.
     """
-    if os.name == "posix":
-        os.system("clear")
-    elif os.name in ("nt", "dos", "ce"):
-        os.system("CLS")
-    else:
-        print("\n" * 150)
+    os.system('cls||clear')
 
 
 BANNER = """
@@ -103,10 +98,11 @@ else:
 rules_choice = input("When you are ready to play press: 'Y'\n")
 
 if rules_choice.lower() == "y":
-    PLAYING = True
     clear()
+    PLAYING = True
 else:
     print("I am sorry but that option is not recognized. Try Again")
+    clear()
 
 
 HIDDEN_CARD = """
