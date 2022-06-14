@@ -60,41 +60,59 @@ WINBANNER = """
 print(BANNER)
 
 # Input for users name and to store it
-name = str(input("To start, please enter your name:\n"))
-print(f"Welcome to the game {name} :).")
-
-# Input option for rules or to start game
-print("\nPlease select one of following options:")
-main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
+while True:
+    try:
+        name = str(input("To start, please enter your name:\n"))
+        if len(name) < 3 or not name.isalpha():
+            print(
+                "Name must only contain letters and be at least 3 letters"
+            )
+            continue
+    except ValueError as e:
+        print(f"Invalid entry: {e}, please enter your name")
+    else:
+        break
+    # Input option for rules or to start game
+    print(f"Welcome to the game {name}.")
 
 # Test input to ensure it is valid
+while True:
+    try:
+        print("\nPlease select one of following options:")
+        main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
+        if main_choice == 1:
+            PLAYING = True
+            break
 
-if main_choice == 1:
-    PLAYING = True
-    clear()
+        elif main_choice == 2:
+            clear()
+            print("""
+            Rules of BlackJack \n
+            1. The player and dealer are both dealt two cards \n
+            2. The player will get both cards face up and the dealer
+            will have one card hidden. \n
+            3. The goal of the game is to get as close to 21 without going
+            over\n
+            4. You will be given the option to Hit or Stand during your turn \n
+            5. Once you are satisfied with your score and stand then its the
+            dealers turn. \n
+            6. The dealer must hit and draw a card on 16 but stand on 17\n
+            7. If the dealer goes over 21 he loses and you win.\n
+            8. If both yourself and the dealer do not exceed 21 then\n
+            the closest to 21 wins\n
+            9. Good luck
+            """)
+            break
 
-elif main_choice == 2:
-    print("""
-    Rules of BlackJack \n
-    1. The player and dealer are both dealt two cards \n
-    2. The player will get both cards face up and the dealer
-    will have one card hidden. \n
-    3. The goal of the game is to get as close to 21 without going over \n
-    4. You will be given the option to Hit or Stand during your turn \n
-    5. Once you are satisfied with your score and stand then its the 
-    dealers turn. \n
-    6. The dealer must hit and draw a card on 16 but stand on 17\n
-    7. If the dealer goes over 21 he loses and you win.\n
-    8. If both yourself and the dealer do not exceed 21 then\n
-    the closest to 21 wins\n
-    9. Good luck
-    """)
+        else:
+            raise ValueError(
+                f"I am sorry but {main_choice} is not a valid selection"
+            )
+    except ValueError:
+        print("I am sorry that input is invalid. Please try again.")
 
-else:
-    print("I am sorry that input is invalid. Please try again.")
-    main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
 
-rules_choice = input("When you are ready to play press any key to start!")
+rules_choice = input("When you are ready to play press enter to start!")
 
 if rules_choice.lower() == "y":
     PLAYING = True
@@ -102,6 +120,7 @@ else:
     print("I am sorry but that option is not recognized. Try Again")
     PLAYING = True
 clear()
+
 
 HIDDEN_CARD = """
     .-------.
