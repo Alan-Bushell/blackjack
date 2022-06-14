@@ -11,7 +11,7 @@ values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
 GAME_COUNT = 1  # Track how many games the user has played
 
 
-def clear():
+def clear_terminal():
     """
     Create function to clear terminal at specific points to give the
     game a clean and clear view.
@@ -86,7 +86,7 @@ while True:
             break
 
         elif main_choice == 2:
-            clear()
+            clear_terminal()
             print("""
             Rules of BlackJack \n
             1. The player and dealer are both dealt two cards \n
@@ -120,7 +120,7 @@ if rules_choice.lower() == "y":
 else:
     print("I am sorry but that option is not recognized. Try Again")
     PLAYING = True
-clear()
+clear_terminal()
 
 
 HIDDEN_CARD = """
@@ -310,7 +310,7 @@ def push(player, dealer):
 # Starting the game
 
 while True:
-    clear()
+    clear_terminal()
     deck = Deck()  # set deck = to Deck() function
     deck.shuffle()  # Shuffle deck
 
@@ -340,7 +340,7 @@ while True:
             hit(deck, dealer_hand)
 
         # Show hidden dealer card
-        clear()
+        clear_terminal()
         display_all_cards(player_hand, dealer_hand)
 
         # Check winner
@@ -359,11 +359,11 @@ while True:
     new_game = input("Would you like to play again? Y(es) or N(o)\n")
 
     if new_game.lower() == 'y':
-        clear()
+        clear_terminal()
         PLAYING = True
         GAME_COUNT += 1
         continue
     else:
-        clear()
+        clear_terminal()
         print(ENDBANNER)
     break
