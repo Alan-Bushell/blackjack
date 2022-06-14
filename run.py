@@ -1,4 +1,5 @@
 import random  # import random to shuffle deck of cards
+import os
 
 # Move card values into global scope
 
@@ -7,6 +8,19 @@ ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
          "K", "A"]
 values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
           "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
+
+
+def clear():
+    """
+    Create function to clear terminal at specific points to give the
+    game a clean and clear view.
+    """
+    if os.name == "posix":
+        os.system("clear")
+    elif os.name in ("nt", "dos", "ce"):
+        os.system("CLS")
+    else:
+        print("\n" * 150)
 
 
 BANNER = """
@@ -29,7 +43,7 @@ print(f"Welcome to the game {name}.")
 print("\nPlease select one of following options:")
 main_choice = int(input("\n1.Start Game\n2.Read Rules\nChoice:"))
 
-# Test input to ensure it is valis
+# Test input to ensure it is valid
 
 if main_choice == 1:
     PLAYING = True
@@ -60,17 +74,18 @@ rules_choice = input("When you are ready to play press: 'Y'\n")
 
 if rules_choice.lower() == "y":
     PLAYING = True
+    clear()
 else:
     print("I am sorry but that option is not recognized. Try Again")
 
 
 HIDDEN_CARD = """
-.-------.
-|?.---. |
-| : ? : |
-| '---'?|
-`-------'
-        """
+    .-------.
+    |?.---. |
+    | : ? : |
+    | '---'?|
+    `-------'
+            """
 
 
 class Card:
@@ -86,12 +101,12 @@ class Card:
         """
     def __str__(self):  # Using ascii to add card shape to terminal
         return f"""
-.-------.
-|{self.rank}.---. |
-| : {self.suit} : |
-| '---'{self.rank}|
-`-------'
-"""
+    .-------.
+    |{self.rank}.---. |
+    | : {self.suit} : |
+    | '---'{self.rank}|
+    `-------'
+    """
 
 
 class Deck:
@@ -185,10 +200,10 @@ def first_round(player, dealer):
     dealers card
     """
     print("Dealers Hand:")
-    print(HIDDEN_CARD)
-    print('', dealer.cards[1])
+    print(HIDDEN_CARD, '', dealer.cards[1])
     print("\nPlayers Hand:", *player.cards, sep="\n")
     print("\nPlayers Score = ", player.value)
+    print("\n")
 
 
 def display_all_cards(player, dealer):
@@ -199,7 +214,7 @@ def display_all_cards(player, dealer):
     """
     print("Dealers Hand:", *dealer.cards, sep="\n")
     print("Dealer's Score =", dealer.value)
-    print("Player's Hand:", *player.cards, sep="\n")
+    print("\nPlayer's Hand:", *player.cards, sep="\n")
     print("\nPlayers Score = ", player.value)
 
 
@@ -271,6 +286,7 @@ while True:
             hit(deck, dealer_hand)
 
         # Show hidden dealer card
+        clear()
         display_all_cards(player_hand, dealer_hand)
 
         # Check winner
@@ -290,9 +306,10 @@ while True:
 
     if new_game.lower() == 'y':
         PLAYING = True
-
+        clear()
         continue
     else:
+        clear()
         print("""
     .------..------..------..------..------.     .------..------..------.
     |T.--. ||H.--. ||A.--. ||N.--. ||K.--. |     |Y.--. ||O.--. ||U.--. |
