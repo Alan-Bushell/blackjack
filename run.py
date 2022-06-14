@@ -10,15 +10,6 @@ values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
           "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
 GAME_COUNT = 1  # Track how many games the user has played
 
-
-def clear_terminal():
-    """
-    Create function to clear terminal at specific points to give the
-    game a clean and clear view.
-    """
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-
 BANNER = """
                                     Welcome to:
     .------..------..------..------..------..------..------..------..------.
@@ -38,7 +29,6 @@ ENDBANNER = """
     `------'`------'`------'`------'`------'     `------'`------'`------'"""
 
 WINBANNER = """
-
  |.--------_--_------------_--__--.|
  ||    /\ |_)|_)|   /\ | |(_ |_   ||
  ;;`,_/``\|__|__|__/``\|_| _)|__ ,:|
@@ -56,9 +46,33 @@ WINBANNER = """
     \  / :   ___________   : \,'
      `.| |  |           |  |,'
        `.|  |           |  |
-         |  |           |  |\n"""
+         |  |           |  |"""
 
-print(BANNER)
+HIDDEN_CARD = """
+    .-------.
+    |?.---. |
+    | : ? : |
+    | '---'?|
+    `-------'
+            """
+
+
+def welcome():
+    """
+    Welcome to the game banner including ascii art
+    """
+    print(BANNER)
+
+
+def clear():
+    """
+    Create function to clear terminal at specific points to give the
+    game a clean and clear view.
+    """
+    os.system('clear||cls')
+
+
+welcome()
 
 # Input for users name and to store it
 while True:
@@ -86,7 +100,7 @@ while True:
             break
 
         elif main_choice == 2:
-            clear_terminal()
+            clear()
             print("""
             Rules of BlackJack \n
             1. The player and dealer are both dealt two cards \n
@@ -120,16 +134,7 @@ if rules_choice.lower() == "y":
 else:
     print("I am sorry but that option is not recognized. Try Again")
     PLAYING = True
-clear_terminal()
-
-
-HIDDEN_CARD = """
-    .-------.
-    |?.---. |
-    | : ? : |
-    | '---'?|
-    `-------'
-            """
+clear()
 
 
 class Card:
@@ -310,7 +315,7 @@ def push(player, dealer):
 # Starting the game
 
 while True:
-    clear_terminal()
+    clear()
     deck = Deck()  # set deck = to Deck() function
     deck.shuffle()  # Shuffle deck
 
@@ -340,7 +345,7 @@ while True:
             hit(deck, dealer_hand)
 
         # Show hidden dealer card
-        clear_terminal()
+        clear()
         display_all_cards(player_hand, dealer_hand)
 
         # Check winner
@@ -359,11 +364,12 @@ while True:
     new_game = input("Would you like to play again? Y(es) or N(o)\n")
 
     if new_game.lower() == 'y':
-        clear_terminal()
+        clear()
         PLAYING = True
         GAME_COUNT += 1
         continue
     else:
-        clear_terminal()
+        clear()
         print(ENDBANNER)
+        print("\n                                 FOR PLAYING MY GAME.\n")
     break
