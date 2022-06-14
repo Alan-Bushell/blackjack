@@ -242,6 +242,7 @@ def first_round(player, dealer):
     First round displays both user cards and only one of the
     dealers card
     """
+    print("\n-----------------------------------------------")
     print("\nDealers Hand:")
     print(HIDDEN_CARD, '', dealer.cards[1])
     print(f"\n {name}'s Hand:", *player.cards, sep="\n")
@@ -256,7 +257,7 @@ def display_all_cards(player, dealer):
     be calculated
     """
     print("\nDealer Shows Card")
-    print("\n-------------------")
+    print("\n-----------------------------------------------")
     print("\nDealers Hand:", *dealer.cards, sep="\n")
     print("Dealer's Score =", dealer.value)
     print(f"\n{name}'s Hand:", *player.cards, sep="\n")
