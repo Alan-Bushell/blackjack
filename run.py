@@ -274,7 +274,7 @@ def player_wins(player, dealer):
     """
     If the player wins then notify player and insert name into message
     """
-    print(f"{name} wins!!")
+    print(f"{name} wins!! The dealer had: {dealer.value}")
     print(WINBANNER)
 
 
@@ -282,21 +282,21 @@ def dealer_wins(player, dealer):
     """
     If the dealer wins then notify player and insert name into message
     """
-    print(f"{name} loses!! The dealer has won this one")
+    print(f"{name} loses!! The dealer had {dealer.value}")
 
 
 def player_bust(player, dealer):
     """
     If the player busts then notify player and insert name into message
     """
-    print(f"{name} has busted.")
+    print(f"{name} has busted with a score of {player.value}.")
 
 
 def dealer_busts(player, dealer):
     """
     If the dealer busts then notify player and insert name into message
     """
-    print(f"{name} wins!! The dealer has bust")
+    print(f"{name} wins! The dealer has busted with a score of {dealer.value}")
     print(WINBANNER)
 
 
@@ -304,7 +304,7 @@ def push(player, dealer):
     """
     If after the game has reached its conclusion and scores are tied.
     """
-    print(f"A tie! {name} & the dealer have the same score.")
+    print(f"A tie! {name} & the dealer have the same score of {player.value}")
 
 
 # Starting the game
@@ -356,7 +356,7 @@ while True:
         else:
             push(player_hand, dealer_hand)
 
-    new_game = input("Would you like to play again? Y(es) or N(o)")
+    new_game = input("Would you like to play again? Y(es) or N(o)\n")
 
     if new_game.lower() == 'y':
         clear()
