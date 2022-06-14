@@ -8,6 +8,7 @@ ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q",
          "K", "A"]
 values = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,
           "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
+GAME_COUNT = 1  # Track how many games the user has played
 
 
 def clear():
@@ -242,7 +243,9 @@ def first_round(player, dealer):
     First round displays both user cards and only one of the
     dealers card
     """
+
     print("\n-----------------------------------------------")
+    print(f"\nGames Played: {GAME_COUNT}\n")
     print("\nDealers Hand:")
     print(HIDDEN_CARD, '', dealer.cards[1])
     print(f"\n {name}'s Hand:", *player.cards, sep="\n")
@@ -258,6 +261,7 @@ def display_all_cards(player, dealer):
     """
     print("\nDealer Shows Card")
     print("\n-----------------------------------------------")
+    print(f"\nGames Played: {GAME_COUNT}\n")
     print("\nDealers Hand:", *dealer.cards, sep="\n")
     print("Dealer's Score =", dealer.value)
     print(f"\n{name}'s Hand:", *player.cards, sep="\n")
@@ -355,6 +359,7 @@ while True:
     if new_game.lower() == 'y':
         clear()
         PLAYING = True
+        GAME_COUNT += 1
         continue
     else:
         clear()
