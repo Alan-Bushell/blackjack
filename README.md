@@ -157,9 +157,20 @@ Error Msg: User must enter a name of at least 3 characters and it must be all le
 |--|--|
 |User enters a name of less than 3 characters | Pass|
 |User tried to enter 3 characters with a number|Pass|
+|User tried to enter an empty string|Pass|
 |User tried to enter a name with a space in it|Fail|
 
 While I expected the error handling to deal with names of less than 3 characters and only letters, I did not think ahead in case users would want to add multiple word names. For example: 'Handsome Joe'. This will throw an error to the user and advise them of the Error Msg above. 
+
+> Main menu options
+Error Msg: Please select 1 to start game or 2 to read the rules
+
+| Test | Result |
+|--|--|
+|User tried to enter a number other than 1 or 2 | Pass|
+|User tried to enter a letter |Pass|
+|User tried to enter an empty selection|Pass|
+|User tried to enter a special symbol|Pass|
 
 <a name="bugs"></a>
 ## **Bugs**
