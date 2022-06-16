@@ -183,6 +183,17 @@ As I have the function set to accept the input as .lower() either case style of 
 |User tried to enter an empty selection|Pass|
 |User tried to enter a special symbol|Pass|
 
+The following tests will show pass if the functionality works as intended or fail if it does not
+> Play again option
+Error Msg: Please enter Y to play again or any other key to exit
+
+| Test | Result |
+|--|--|
+|User tried to enter y to play again  | Pass|
+|User tried to enter a number to exit|Pass|
+|User tried to enter any other letter than y to exit|Pass|
+|User tried to enter a an empty string to exit |Fail|
+
 <a name="bugs"></a>
 ## **Bugs**
 
