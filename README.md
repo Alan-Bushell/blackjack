@@ -133,6 +133,37 @@ For loop over suits and cards to generate deck of 52 cards.
 <a name="deployment"></a>
 ## Deployment
 
+###
+
+####
+Navigate to heroku.com & log in.
+
+Click "new" and create a new App.
+
+Give the application a name and then choose your region and Click "Create app".
+
+Navigate to are "Settings".
+
+Buildpacks now need to be added. 
+These install future dependancies that we need outside of the requirements file. 
+Select Python first and then node.js and click save. 
+**Make sure they are in this order.**
+
+Then go to the deploy section and choose your deployment method. 
+
+To connect with github select github and confirm.
+
+Search for your repository select it and click connect.
+
+You can choose to either deploy using automatic deploys which means heroku will rebuild the app everytime you push your changes. 
+
+For this option choose the branch to deploy and click enable automatic deploys. 
+
+This can be changed at a later date to manual. 
+
+Manual deployment deploys the current state of a branch.
+
+Click deploy branch.
 
 <a name="credits"></a>
 ## Credits
