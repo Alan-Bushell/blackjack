@@ -84,6 +84,44 @@ For loop over suits and cards to generate deck of 52 cards.
 - Who ever has a higher score while remaining at 21 or lower wins
 
 
+## Game Flow - 
+> When the user loads up the game they are presented with the following:
+
+![Begining of game](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/blackjack-home.png)
+
+> The user is then presented with a little menu asking would they like to start the game or read over the rules first.
+![Menu](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/menu.png)
+
+> If the user selects the rules this is how it will show:
+![Rules](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/rules.png)
+
+> When the player is ready the cardas will be dealt. Here we see the dealers cards first. One hidden card and one shown card:
+![Dealer Cards](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/dealers-cards.png)
+
+> When we scroll down we see the players cards with a running total for the player. We do not include a running total for the dealer as he only has one card so for that we know of.
+![Players Cards](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/players-cards.png)
+
+> The player is then given the option to Hit or Stand
+![Hit or Stand](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/hit-or-stand.png)
+
+> If the player wants to increase their score they can hit and it will look as follows. The player can keep hitting until they choose to stop or until they exceed 21.
+![Player Hits](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/player-draws-card.png)
+
+> If the player exceeds 21 that means they have bust and will be shown the following message:
+![Player Bust](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/player-bust.png)
+
+> If the player stands at any stage while below 21 it will then shift to the dealers turn. The dealer must hit on 16 or under but stand on 17 or over. If the dealer exceeds 21 they also bust. As seen here:
+![Dealer Bust](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/dealer-bust.png)
+
+> If neither the player or dealer busts when the round has finished the programme will determine the winner be checking to see who has the closest to 21 as seen here:
+![Check winner](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/none-bust.png)
+
+> If the player is the winner their score in will increase and they will be greeted by a famous robot holding up an applause sign in ascii art as seen here:
+![Player Wins](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/win-art.png)
+
+> If the player decides they no longer wish to play again when prompted after the game, they will the be greeted with a thank you message as seen here:
+![Thank you](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/thank-you.png)
+
 <a name="left"></a>
 
 ### Features left to implement
@@ -194,6 +232,12 @@ Error Msg: Please enter Y to play again or any other key to exit
 |User tried to enter any other letter than y to exit|Pass|
 |User tried to enter a an empty string to exit |Fail|
 
+### Pep8 Checker tool
+
+> I used the Pep8 checker tool to validate my python code and ensure it was free from errors. As shown here:
+
+![Pep8](https://github.com/Alan-Bushell/blackjack/blob/main/assets/images/readme/pep8.png)
+
 <a name="bugs"></a>
 ## **Bugs**
 
@@ -209,6 +253,9 @@ Error Msg: Please enter Y to play again or any other key to exit
 ### Endless loop at the play again functio when player says no and wants to exit game
 > This issue caused the player to be stuck in an endless cycle of do you want to play the game again. The error was caused due to a missing break statement which
 > has since been fixed. Now when the player decided they do not want to play again the game exits and presents them with a thank you for playing banner.
+
+### Incorrect score being added to player when they bust.
+> Inspected the outcome code for player bust and I incorrectly had the player score to increment instead of the dealer. Fixed this bug and it is now tracking correctly.
 
 <a name="deployment"></a>
 ## Deployment
@@ -283,6 +330,10 @@ Multiple resources used to better understand the logic and flow of a gaming prog
 
 ### Stack Overflow
 > Used to reference different synthax issues from existing older boards. Also used to query clear function issues when I ran into them as referenced in the terminal bug in the big section.
+
+
+### Youtube
+> One of the best free learning platforms in the world and has I use it every day when coding to help me better understand concepts from different perspectives.
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
