@@ -191,7 +191,7 @@ As I have the function set to accept the input as .lower() either case style of 
 > While everything worked perfectly in gitpod development space, once deployed to heroku it was not consistent.
 > Final attempt to rectify was to contact Code Institute student support but unfortunately a fix could not be found.
 
-### Identified infified bug on adding dealer value to terminal to show running score. To fix this bug the dealers score is not present until the player stands.
+### Identified bug on adding dealer value to terminal to show running score. To fix this bug the dealers score is not present until the player stands.
 > This bug showed the dealers total score including hidden card value while the player had the option to hit or stand. As this would give the player the advantage 
 > I decided to remove this visibility until after the player stood and the dealer hidden card was revealed. A more elegant solution would be possible to only show card[0].value but due to time contstraints I was forced to use a more convenient solution.
 
