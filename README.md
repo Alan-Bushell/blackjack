@@ -86,12 +86,39 @@ For loop over suits and cards to generate deck of 52 cards.
 
 <a name="left"></a>
 
-### Additional ideas
+### Features left to implement
+
+>I wanted to add a goal for a scoring system. For example: First player to win 10 hands wins the overall game.
+
+> If the player gets a clean sweep. ie wins 10 games without losing then present them with a special secret congratulations message.
+
+> Give the user the ability to place bets
+
+> Give the user the functionality to play multiple hands
+
+> Give the user the ability to spilt their cards if they are dealt two of the same card at the beginning of the game and pay against the dealers cards.
+
+> I really wanted to inject color into the project using colorama and set the traditional red suits to red and leave the black suits as black and white as standard. I also would have liked to add red to errors presented due to invalid entrys and green for success.
+Due to personal reasons a decision was made prepare for submission without it due to time constraints.
 
 
 <a name="tech"></a>
 # Technology Used
 ### Python
+Used to create the application
+
+
+### Heroku
+Used to deploy and host the application
+
+### Github
+Used to store the code
+
+### Gitpod
+IDE used for creating the application
+
+### Git
+Used for version control
 
 <a name="testing"></a>
 # Testing
@@ -132,8 +159,6 @@ For loop over suits and cards to generate deck of 52 cards.
 
 <a name="deployment"></a>
 ## Deployment
-
-###
 
 ####
 Navigate to heroku.com & log in.
@@ -211,3 +236,11 @@ Multiple resources used to better understand the logic and flow of a gaming prog
 
 ### Dick Vlaanderen
 > My mentor in the CI who provided me with great feedback and guidance at the inception of this project.
+
+### My CI Cohort
+> My team and cohort leader Kasia have been great to work with. I enjoy our brief chats and the knowledge sharing amongst the group is fantastic.
+
+### Ken Sheridan
+> A special shout out to Ken Sheridan. I approached Ken when it was no longer possible for me to book in my remaining mentor sessions due to personal circumstances.
+
+> I wanted to get another set of eyes on my completed project and receive any feedback or opinions regarding the completed project. Ken was right on hand to give my project a good once over and his support is greatly appreciated.
