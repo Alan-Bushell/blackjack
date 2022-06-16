@@ -349,7 +349,7 @@ while True:
         first_round(player_hand, dealer_hand)
 
         if player_hand.value > 21:
-            PLAYER_WINS += 1
+            DEALER_WINS += 1
             player_bust(player_hand, dealer_hand)
             break
 
