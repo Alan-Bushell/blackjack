@@ -145,14 +145,21 @@ Used for version control
 |If the hand is a tie the player is notified|Pass|
 |If the hand is a tie, neither player or dealers score increases|Pass|
 
-
 #### User tests
 
- 
-|Test|Result  |
-|--|--|
-|||
+The following tests are on the error handling throughout the project.
+If the error handling works as expected it will be marked as pass.
+If it does not work as expected then it will be marked as a fail.
+> Enter Name Field
+Error Msg: User must enter a name of at least 3 characters and it must be all letters.
 
+| Test | Result |
+|--|--|
+|User enters a name of less than 3 characters | Pass|
+|User tried to enter 3 characters with a number|Pass|
+|User tried to enter a name with a space in it|Fail|
+
+While I expected the error handling to deal with names of less than 3 characters and only letters, I did not think ahead in case users would want to add multiple word names. For example: 'Handsome Joe'. This will throw an error to the user and advise them of the Error Msg above. 
 
 <a name="bugs"></a>
 ## **Bugs**
