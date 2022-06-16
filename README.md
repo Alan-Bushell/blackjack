@@ -179,13 +179,13 @@ We can now click on the open App button above to view our application.
 
 Multiple resources used to better understand the logic and flow of a gaming programme in Python.
 
-### Stack Exchange - https://codereview.stackexchange.com/questions/177523/simple-oop-blackjack-game-in-python
+### [Stack Exchange](https://codereview.stackexchange.com/questions/177523/simple-oop-blackjack-game-in-python)
 > Assisted in understanding the OOP concepts in python when applied to this type of game
 
-### IT guys - https://www.youtube.com/watch?v=8QTsK1aVMI0
+### [IT guys](https://www.youtube.com/watch?v=8QTsK1aVMI0)
 > Interesting approach to building a blackjack game with python. - As I progressed through the project I covered off more and more material to help me better understand the core logic of how to implement a blackjack game. The process shown and covered in this material closely matched how I had already built my classes in python and reassured me that I was on the right track throughout.
 
-### Anthony Tapias - https://medium.com/@anthonytapias/build-a-deck-of-cards-with-oo-python-c41913a744d3
+### [Anthony Tapias](https://medium.com/@anthonytapias/build-a-deck-of-cards-with-oo-python-c41913a744d3)
 > Developing a deck of cards in python using oop. Useful resource to create and instantialise a deck of cards using classes. While I was already successful in doing this through for loops, this resource gave me some inspiration in how to approach the problem in a more efficient oop way.
 
 <a name="content"></a>
@@ -197,7 +197,7 @@ Multiple resources used to better understand the logic and flow of a gaming prog
 ### ASCII Art -  https://patorjk.com
 > Used to create the ascii art used for this project, mainly the welcome to blackjack banner and the thank you for playing banner.
 
-### ASCIIART.EU - https://www.asciiart.eu/television/futurama
+### [ASCIIART.EU](https://www.asciiart.eu/television/futurama)
 > Used this website for the bender applause ascii for when a user wins a hand.
 
 ### Code Institute
@@ -209,5 +209,5 @@ Multiple resources used to better understand the logic and flow of a gaming prog
 <a name="acknowlegements"></a>
 ## Acknowledgements
 
-### Dick Vanderlen
+### Dick Vlaanderen
 > My mentor in the CI who provided me with great feedback and guidance at the inception of this project.
