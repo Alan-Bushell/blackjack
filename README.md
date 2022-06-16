@@ -172,6 +172,17 @@ Error Msg: Please select 1 to start game or 2 to read the rules
 |User tried to enter an empty selection|Pass|
 |User tried to enter a special symbol|Pass|
 
+> Hit or stand option
+Error Msg: Please enter H to hit or S to stand
+As I have the function set to accept the input as .lower() either case style of H(h) or S(s) is considered valid in this programme
+
+| Test | Result |
+|--|--|
+|User tried to enter a number on hit or stand choice | Pass|
+|User tried to enter a letter other than H or S |Pass|
+|User tried to enter an empty selection|Pass|
+|User tried to enter a special symbol|Pass|
+
 <a name="bugs"></a>
 ## **Bugs**
 
