@@ -130,7 +130,20 @@ Used for version control
 
 | Test | Result |
 |--|--|
-|||
+|On run programme the welcome message appears|Pass|
+|After welcome message user prompted for name|Pass|
+|Once name is input the menu option presents|Pass|
+|Selecting 1 from the menu starts the game|Pass|
+|Selecting 2 from the menu opens the rules|Pass|
+|Dealer hand hidden during first round|Pass|
+|When player stands dealer card is shown|Pass|
+|When player stands the endgame calculation runs to determin winner|Pass|
+|If player wins the player is presented with a win message|Pass|
+|If the player wins the ascii art for bender is shown|Pass|
+|If the dealer wins the dealer score is incremented|Pass|
+|If the dealer wins the player is given a lose message|Pass|
+|If the hand is a tie the player is notified|Pass|
+|If the hand is a tie, neither player or dealers score increases|Pass|
 
 
 #### User tests
